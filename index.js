@@ -14,6 +14,8 @@ usb.on('detach', (device) => {
 // console.log(list)
 
 // 通过 Vid 和 Pid 查找设备
+// PID 0x3151
+// VIP 0x50AB
 const device = usb.findByIds(12625, 20651)
 console.log(device)
 console.log(device.deviceAddress)
