@@ -77,27 +77,25 @@ inEndpoint.on('error', function (error) {
     console.log(error);
 });
 
-// outEndpoint.claim()
-// outEndpoint.startStream(1, 64);
+// 发送开始指令
 console.log(Buffer.concat([Buffer.from([0x0d, 0xe7, 0x01, 0x8a, 0xe0]), Buffer.alloc(59)], 64))
 outEndpoint.transfer(Buffer.concat([Buffer.from([0x0d, 0xe7, 0x01, 0x8a, 0xe0]), Buffer.alloc(59)], 64), function (error) {
   if (error) {
     console.log(error);
   }
 });
-
-// outEndpoint.claim()
-// outEndpoint.startStream(1, 64);
 outEndpoint.transfer(Buffer.concat([Buffer.from([0x0d, 0xe7, 0x01, 0x8e, 0xe0]), Buffer.alloc(59)], 64), function (error) {
   if (error) {
     console.log(error);
   }
 });
 
-// outEndpoint.claim()
-// outEndpoint.startStream(1, 64);
-// outEndpoint.transfer(Buffer.from([0x0d, 0xe7, 0x01, 0x8a, 0xe0]), function (error) {
+// 发送 OTA 指令
+// console.log(Buffer.from([0x4d, 0x04, 0x70, 0x4c]))
+// outEndpoint.transfer(Buffer.from([0x4d, 0x04, 0x70, 0x4c]), function (error) {
+//   if (error) {
 //     console.log(error);
+//   }
 // });
 
 // outEndpoint.transfer(Buffer.from([0x0d, 0xe7, 0x01, 0x8a, 0xe0]), (error) => {
